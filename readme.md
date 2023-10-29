@@ -1,7 +1,18 @@
 # Building ML Application with Python and Flask API
 
 
+## How-to
+
+```bash
+# from ticket-classification
+gunicorn --bind 0.0.0.0:5001 wsgi:app
+
+# from webapp
+gunicorn --bind 0.0.0.0:8000 wsgi:app
+```
+
 ## Scripts
+
 ```bash
 pip install jupyterlab
 
@@ -42,4 +53,12 @@ gcloud run services update $NAME --image=$IMAGE --platform=managed --region=us-c
 
 # deploy from source
 gcloud run deploy ticket-tagger --source ./ticket-classification --region=us-central1
+```
+
+
+## Example
+
+* Input: I tried to make a transaction at a supermarket retail store, using my chase debit/atm card, but the transaction was declined. I am still able to withdraw money out of an ATM machine using the same debit card. Please resolve this issue.
+
+* predicted: `credit_card`
 ```
