@@ -36,7 +36,6 @@ def load_model():
         except Exception as e:
             raise Exception(f"Error loading model: {e}")
 
-
 def pre_process_text(text):
 	"""
 	This function is to clean the text and remove punctuations,digits, text in square brackets and masked characters.
@@ -87,3 +86,5 @@ def predict_class(text):
 	category = get_predict(X)
 
 	return category
+
+
